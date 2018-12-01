@@ -1,6 +1,6 @@
 package sep.controller;
 
-import java.sql.Timestamp;
+import java.util.Map;
 import java.util.Random;
 
 import org.springframework.http.HttpEntity;
@@ -17,10 +17,13 @@ import org.springframework.web.client.RestTemplate;
 
 import sep.dto.MerchantDTO;
 import sep.dto.PaymentUrlIdDTO;
+import sep.model.PayPalClient;
 
 @RestController
 @RequestMapping(value = "/zahtev")
 public class KoncentratorPlacanjaController {
+	
+	PayPalClient payPalClient = new PayPalClient();
 	
 	@CrossOrigin
 	@RequestMapping(
@@ -57,5 +60,25 @@ public class KoncentratorPlacanjaController {
             return null; 
         }
 		
+	}
+	
+	@CrossOrigin
+	@RequestMapping(
+			value = "/payPal",
+			method = RequestMethod.POST
+	)
+	public Map<String, Object> payPal(@RequestBody MerchantDTO merchant) {
+		System.out.println("Dosao u PayPal");
+		return payPalClient.createPayment(merchant.getAmount().toString());
+		
+	}
+	
+	@CrossOrigin
+	@RequestMapping(
+			value = "/zavrsiPlacanje",
+			method = RequestMethod.POST
+	)
+	public Map<String, Object> completePayment(@RequestBody String request){
+	    return payPalClient.completePayment(request);
 	}
 }
