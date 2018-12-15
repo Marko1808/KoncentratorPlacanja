@@ -5,18 +5,16 @@ import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
 
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import sep.dto.BitcoinDTO;
@@ -25,7 +23,7 @@ import sep.dto.PaymentUrlIdDTO;
 import sep.dto.ResponseBitcoinDTO;
 import sep.model.PayPalClient;
 
-@Controller
+@RestController
 @RequestMapping(value = "/zahtev")
 public class KoncentratorPlacanjaController {
 	
@@ -73,7 +71,7 @@ public class KoncentratorPlacanjaController {
 			value = "/payPal",
 			method = RequestMethod.POST
 	)
-	public Map<String, Object> payPal(@RequestBody MerchantDTO merchant) {
+	public ResponseEntity<?> payPal(@RequestBody MerchantDTO merchant) {
 		System.out.println("Dosao u PayPal");
 		return payPalClient.createPayment(merchant.getAmount().toString());
 		
@@ -84,7 +82,7 @@ public class KoncentratorPlacanjaController {
 			value = "/zavrsiPlacanje",
 			method = RequestMethod.POST
 	)
-	public Map<String, Object> completePayment(@RequestBody String request){
+	public ResponseEntity<?> completePayment(@RequestBody String request){
 	    return payPalClient.completePayment(request);
 	}
 	
@@ -94,7 +92,7 @@ public class KoncentratorPlacanjaController {
 			value = "/bitcoin",
 			method = RequestMethod.POST
 	)
-	public void bitcoin(@RequestBody BitcoinDTO b, HttpServletResponse r) {
+	public ResponseEntity<?> bitcoin(@RequestBody BitcoinDTO b) {
 		System.out.println("Dosao u Bitcoin...");
 		
 		Map<String, Object> mapa = new HashMap<String,Object>();
@@ -122,10 +120,11 @@ public class KoncentratorPlacanjaController {
         HttpEntity<ResponseBitcoinDTO> entity1 = new HttpEntity<ResponseBitcoinDTO>(response, noviHeaders);
         //String odg = client.postForObject(entity1.getHeaders().getLocation(), entity1, String.class); //ne moze da pogodi nas localhost...
         
-        System.out.println("\n\n\t\tredirekcija: \n\n\n" + response.getPayment_url());
+       /* System.out.println("\n\n\t\tredirekcija: \n\n\n" + response.getPayment_url());
 		r.setStatus(302);
 		r.setHeader("Location", response.getPayment_url());
-        r.setHeader("Access-Control-Allow-Origin", "*");
+        r.setHeader("Access-Control-Allow-Origin", "*");*/
+        return new ResponseEntity<>(response.getPayment_url(), HttpStatus.OK);
 	}
 	
 }

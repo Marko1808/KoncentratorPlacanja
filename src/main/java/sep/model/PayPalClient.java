@@ -5,6 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+
 import com.paypal.api.payments.Amount;
 import com.paypal.api.payments.Links;
 import com.paypal.api.payments.Payer;
@@ -24,7 +27,7 @@ public class PayPalClient {
 		clientId = "Afs9F-qEpwias0bd95BE70PVIziIi8fVbklBVLHj_Ro2dX6Q5r2iWDeC4d9QEIDoNDm0RCJMPUyJDxAI";
 		clientSecret = "EIYy3hrNkmp-W6u8ueBjRp_U3a0T2SDOo7SyCBayYEHoZezgKUHZpExoi_ife1Cku8W10GMetLihcfWb";
 	}
-	public Map<String, Object> createPayment(String sum){
+	public ResponseEntity<?> createPayment(String sum){
 	    Map<String, Object> response = new HashMap<String, Object>();
 	    Amount amount = new Amount();
 	    amount.setCurrency("USD");
@@ -61,14 +64,15 @@ public class PayPalClient {
 	            }
 	            response.put("status", "success");
 	            response.put("redirect_url", redirectUrl);
+	            return new ResponseEntity<>(redirectUrl,HttpStatus.OK);
 	        }
 	    } catch (PayPalRESTException e) {
 	        System.out.println("Error happened during payment creation!");
 	    }
-	    return response;
+	    return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
 	}
 	
-	public Map<String, Object> completePayment(String req){
+	public ResponseEntity<?> completePayment(String req){
 	    Map<String, Object> response = new HashMap();
 	    Payment payment = new Payment();
 	   // payment.setId(req.getParameter("paymentId"));
@@ -88,7 +92,7 @@ public class PayPalClient {
 	    } catch (PayPalRESTException e) {
 	        System.err.println(e.getDetails());
 	    }
-	    return response;
+	    return new ResponseEntity<>(response,HttpStatus.OK);
 	}
 
 }
