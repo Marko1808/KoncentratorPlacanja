@@ -1,45 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+	<style>
+		html, .mojaKlasa {
+			height: 970px;
+			background-color: #F0F8FF;
+			background-image: linear-gradient(#F0F8FF, #4682B4);
+		}
+	</style>
 
-    <head>
-
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Success bitcoin</title>
-		<script src="scripts/jquery-3.3.1.min.js"></script>
-        <!-- CSS -->
-        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
-        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
-		<link rel="stylesheet" href="assets/css/form-elements.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-        
-        <script src="scripts/loginRegister.js"></script>
-
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-
-        <!-- Favicon and touch icons -->
-        <link rel="shortcut icon" href="assets/ico/favicon.png">
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
-
-		<script src="toastr/toastr.min.js"></script>
-    	<link href="toastr/toastr.min.css" rel="stylesheet"/>
+	<head>
+		<meta charset="UTF-8">
+		<title>Plaćanje bitcoin-om</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		
-    </head>
-
-    <body>
-
-        <p>Uspesno placanje bitcoinom.</p>
-
-    </body>
-
+		<script src="scripts/paypal.js"></script>
+		
+	</head>
+	
+	<body>
+		<div class="mojaKlasa">
+			<div class="row">
+				<div class="col-lg-12 col-lg-9"></div>
+		  		<div class="col-lg-6 col-lg-3">
+					<div class="form-group">
+						<form action="" class="form-horizontal">
+							<div class="col-lg-4">
+						    	<input id="dugmeNazad" class="btn btn-link" type="button" value="Nazad">
+						    </div>
+				        </form>
+					    <form action="" class="form-horizontal">
+							<div class="col-lg-4">
+						    	<input id="dugmeOdjaviSe" class="btn btn-link" type="button" value="">
+						    </div>
+				       </form>
+					</div>
+		  		</div>
+			</div>
+		
+			<div style="padding-left:10px">
+				<h4>Plaćanje bitcoin-om je uspelo.</h4>
+			</div>
+		</div>
+		
+		<script>
+			$("#dugmeNazad").click(function(){
+				location.href = "https://localhost:9081/homePage.html"
+			});
+		</script>
+	</body>
 </html>

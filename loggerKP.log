@@ -1,0 +1,142 @@
+2018-12-22 14:37:58.742  INFO 5672 --- [main] sep.Application                          : Starting Application on Bilbo with PID 5672 (C:\Users\Bojana\git\KoncentratorPlacanja\target\classes started by Bojana in C:\Users\Bojana\git\KoncentratorPlacanja)
+2018-12-22 14:37:58.742  INFO 5672 --- [main] sep.Application                          : No active profile set, falling back to default profiles: default
+2018-12-22 14:37:58.867  INFO 5672 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5bfa9431: startup date [Sat Dec 22 14:37:58 CET 2018]; root of context hierarchy
+2018-12-22 14:38:00.354  INFO 5672 --- [main] o.s.b.f.xml.XmlBeanDefinitionReader      : Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2018-12-22 14:38:02.004  INFO 5672 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$1ba6b042] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-12-22 14:38:02.072  INFO 5672 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2018-12-22 14:38:03.346  INFO 5672 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 1236 (https)
+2018-12-22 14:38:03.397  INFO 5672 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-12-22 14:38:03.397  INFO 5672 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-12-22 14:38:03.850  INFO 5672 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-12-22 14:38:03.850  INFO 5672 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4983 ms
+2018-12-22 14:38:04.928  INFO 5672 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-12-22 14:38:04.932  INFO 5672 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-12-22 14:38:04.932  INFO 5672 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-12-22 14:38:04.932  INFO 5672 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-12-22 14:38:04.932  INFO 5672 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-12-22 14:38:04.932  INFO 5672 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-12-22 14:38:04.932  INFO 5672 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'CXFServlet' to [/services/*]
+2018-12-22 14:38:04.932  INFO 5672 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'messageDispatcherServlet' to [/services/*]
+2018-12-22 14:38:05.992  INFO 5672 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-12-22 14:38:06.014  INFO 5672 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-12-22 14:38:06.123  INFO 5672 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
+2018-12-22 14:38:06.123  INFO 5672 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-12-22 14:38:06.139  INFO 5672 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2018-12-22 14:38:06.217  INFO 5672 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-12-22 14:38:06.576  INFO 5672 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-12-22 14:38:06.884  INFO 5672 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000227: Running hbm2ddl schema export
+2018-12-22 14:38:06.884  INFO 5672 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000230: Schema export complete
+2018-12-22 14:38:06.915  INFO 5672 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-12-22 14:38:07.962  INFO 5672 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5bfa9431: startup date [Sat Dec 22 14:37:58 CET 2018]; root of context hierarchy
+2018-12-22 14:38:08.099  INFO 5672 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/zahtev/posaljiZahtev],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> sep.controller.KoncentratorPlacanjaController.posaljiZahtev(sep.dto.MerchantDTO)
+2018-12-22 14:38:08.099  INFO 5672 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/zahtev/zavrsiPlacanje],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> sep.controller.KoncentratorPlacanjaController.completePayment(java.lang.String)
+2018-12-22 14:38:08.099  INFO 5672 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/zahtev/bitcoin],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> sep.controller.KoncentratorPlacanjaController.bitcoin(sep.dto.BitcoinDTO)
+2018-12-22 14:38:08.114  INFO 5672 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/zahtev/payPal],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> sep.controller.KoncentratorPlacanjaController.payPal(sep.dto.MerchantDTO)
+2018-12-22 14:38:08.114  INFO 5672 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-12-22 14:38:08.114  INFO 5672 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-12-22 14:38:08.239  INFO 5672 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-12-22 14:38:08.239  INFO 5672 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-12-22 14:38:08.333  INFO 5672 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-12-22 14:38:08.391  INFO 5672 --- [main] oConfiguration$WelcomePageHandlerMapping : Adding welcome page: class path resource [static/index.html]
+2018-12-22 14:38:08.970  INFO 5672 --- [main] b.a.s.AuthenticationManagerConfiguration : 
+
+Using default security password: 617b3b28-e267-4b1a-a068-c2993c56e39a
+
+2018-12-22 14:38:09.043  INFO 5672 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/css/**'], Ant [pattern='/js/**'], Ant [pattern='/images/**'], Ant [pattern='/webjars/**'], Ant [pattern='/**/favicon.ico'], Ant [pattern='/error']]], []
+2018-12-22 14:38:09.215  INFO 5672 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@432af457, org.springframework.security.web.context.SecurityContextPersistenceFilter@50110971, org.springframework.security.web.header.HeaderWriterFilter@7f42e06e, org.springframework.security.web.authentication.logout.LogoutFilter@7069f076, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6661d8c0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7a2fce12, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@202d9236, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@f5a7226, org.springframework.security.web.session.SessionManagementFilter@2efd2f21, org.springframework.security.web.access.ExceptionTranslationFilter@31e739bf]
+2018-12-22 14:38:09.277  INFO 5672 --- [main] o.s.s.w.a.c.ChannelProcessingFilter      : Validated configuration attributes
+2018-12-22 14:38:09.324  INFO 5672 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/**']]], [org.springframework.security.web.access.channel.ChannelProcessingFilter@7da635c0, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@64e7d698, org.springframework.security.web.context.SecurityContextPersistenceFilter@4ea17147, org.springframework.security.web.header.HeaderWriterFilter@7d0100ea, org.springframework.security.web.authentication.logout.LogoutFilter@9a20cbd, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@35650279, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2eda4eeb, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5ba90d8a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2519026b, org.springframework.security.web.session.SessionManagementFilter@357bc488, org.springframework.security.web.access.ExceptionTranslationFilter@68b11545, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7f3ca64a]
+2018-12-22 14:38:09.740  INFO 5672 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-12-22 14:38:10.303  INFO 5672 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 1236 (https)
+2018-12-22 14:38:10.316  INFO 5672 --- [main] sep.Application                          : Started Application in 11.994 seconds (JVM running for 13.421)
+2018-12-22 14:39:37.230  INFO 5672 --- [https-jsse-nio-1236-exec-8] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-12-22 14:39:37.231  INFO 5672 --- [https-jsse-nio-1236-exec-8] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-12-22 14:39:37.263  INFO 5672 --- [https-jsse-nio-1236-exec-8] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 31 ms
+2018-12-22 14:39:52.930  INFO 5672 --- [https-jsse-nio-1236-exec-8] s.c.KoncentratorPlacanjaController       : 
+		Neuspešno slanje zahteva.
+
+2018-12-22 14:40:09.619  INFO 5672 --- [https-jsse-nio-1236-exec-5] s.c.KoncentratorPlacanjaController       : 
+		Započeto plaćanje preko PayPal-a.
+
+2018-12-22 14:40:23.442  INFO 5672 --- [https-jsse-nio-1236-exec-2] s.c.KoncentratorPlacanjaController       : 
+		Uspešno završeno plaćanje preko bitcoin-a.
+
+2018-12-22 15:12:50.215  INFO 5672 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2018-12-22 15:12:50.226  INFO 5672 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5bfa9431: startup date [Sat Dec 22 14:37:58 CET 2018]; root of context hierarchy
+2018-12-22 15:12:50.228  INFO 5672 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-12-22 15:12:50.228  INFO 5672 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-12-22 15:12:50.228  INFO 5672 --- [RMI TCP Connection(2)-127.0.0.1] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000227: Running hbm2ddl schema export
+2018-12-22 15:12:50.228  INFO 5672 --- [RMI TCP Connection(2)-127.0.0.1] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000230: Schema export complete
+2018-12-22 15:20:41.310  INFO 4384 --- [main] sep.Application                          : Starting Application on Bilbo with PID 4384 (C:\Users\Bojana\git\KoncentratorPlacanja\target\classes started by Bojana in C:\Users\Bojana\git\KoncentratorPlacanja)
+2018-12-22 15:20:41.325  INFO 4384 --- [main] sep.Application                          : No active profile set, falling back to default profiles: default
+2018-12-22 15:20:41.403  INFO 4384 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5bfa9431: startup date [Sat Dec 22 15:20:41 CET 2018]; root of context hierarchy
+2018-12-22 15:20:42.200  INFO 4384 --- [main] o.s.b.f.xml.XmlBeanDefinitionReader      : Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+2018-12-22 15:20:42.903  INFO 4384 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$EnhancerBySpringCGLIB$$9f3313b9] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-12-22 15:20:42.949  INFO 4384 --- [main] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2018-12-22 15:20:43.496  INFO 4384 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 1236 (https)
+2018-12-22 15:20:43.527  INFO 4384 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-12-22 15:20:43.527  INFO 4384 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-12-22 15:20:43.714  INFO 4384 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-12-22 15:20:43.730  INFO 4384 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2327 ms
+2018-12-22 15:20:44.214  INFO 4384 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-12-22 15:20:44.219  INFO 4384 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-12-22 15:20:44.219  INFO 4384 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-12-22 15:20:44.219  INFO 4384 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-12-22 15:20:44.219  INFO 4384 --- [localhost-startStop-1] .s.DelegatingFilterProxyRegistrationBean : Mapping filter: 'springSecurityFilterChain' to: [/*]
+2018-12-22 15:20:44.219  INFO 4384 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-12-22 15:20:44.219  INFO 4384 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'CXFServlet' to [/services/*]
+2018-12-22 15:20:44.219  INFO 4384 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'messageDispatcherServlet' to [/services/*]
+2018-12-22 15:20:44.882  INFO 4384 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-12-22 15:20:44.898  INFO 4384 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-12-22 15:20:44.984  INFO 4384 --- [main] org.hibernate.Version                    : HHH000412: Hibernate Core {5.0.12.Final}
+2018-12-22 15:20:44.986  INFO 4384 --- [main] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-12-22 15:20:44.988  INFO 4384 --- [main] org.hibernate.cfg.Environment            : HHH000021: Bytecode provider name : javassist
+2018-12-22 15:20:45.048  INFO 4384 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-12-22 15:20:45.343  INFO 4384 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-12-22 15:20:45.529  INFO 4384 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000227: Running hbm2ddl schema export
+2018-12-22 15:20:45.534  INFO 4384 --- [main] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000230: Schema export complete
+2018-12-22 15:20:45.552  INFO 4384 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-12-22 15:20:46.287  INFO 4384 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5bfa9431: startup date [Sat Dec 22 15:20:41 CET 2018]; root of context hierarchy
+2018-12-22 15:20:46.410  INFO 4384 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/zahtev/payPal],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> sep.controller.KoncentratorPlacanjaController.payPal(sep.dto.MerchantDTO)
+2018-12-22 15:20:46.414  INFO 4384 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/zahtev/zavrsiPlacanje],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> sep.controller.KoncentratorPlacanjaController.completePayment(java.lang.String)
+2018-12-22 15:20:46.416  INFO 4384 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/zahtev/bitcoin],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> sep.controller.KoncentratorPlacanjaController.bitcoin(sep.dto.BitcoinDTO)
+2018-12-22 15:20:46.417  INFO 4384 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/zahtev/posaljiZahtev],methods=[POST]}" onto public org.springframework.http.ResponseEntity<?> sep.controller.KoncentratorPlacanjaController.posaljiZahtev(sep.dto.MerchantDTO)
+2018-12-22 15:20:46.420  INFO 4384 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-12-22 15:20:46.421  INFO 4384 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-12-22 15:20:46.504  INFO 4384 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-12-22 15:20:46.504  INFO 4384 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-12-22 15:20:46.588  INFO 4384 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-12-22 15:20:46.633  INFO 4384 --- [main] oConfiguration$WelcomePageHandlerMapping : Adding welcome page: class path resource [static/index.html]
+2018-12-22 15:20:47.183  INFO 4384 --- [main] b.a.s.AuthenticationManagerConfiguration : 
+
+Using default security password: 22fa489d-f140-4f8b-b3c6-d37d80fa9949
+
+2018-12-22 15:20:47.253  INFO 4384 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/css/**'], Ant [pattern='/js/**'], Ant [pattern='/images/**'], Ant [pattern='/webjars/**'], Ant [pattern='/**/favicon.ico'], Ant [pattern='/error']]], []
+2018-12-22 15:20:47.349  INFO 4384 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@59498d94, org.springframework.security.web.context.SecurityContextPersistenceFilter@66e17eff, org.springframework.security.web.header.HeaderWriterFilter@73c48264, org.springframework.security.web.authentication.logout.LogoutFilter@62aeddc8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1bbddada, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6d6ac396, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@77b3752b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@35bfa1bb, org.springframework.security.web.session.SessionManagementFilter@5bcec67e, org.springframework.security.web.access.ExceptionTranslationFilter@6b5ab2f2]
+2018-12-22 15:20:47.376  INFO 4384 --- [main] o.s.s.w.a.c.ChannelProcessingFilter      : Validated configuration attributes
+2018-12-22 15:20:47.419  INFO 4384 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/**']]], [org.springframework.security.web.access.channel.ChannelProcessingFilter@13803a94, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@733fb462, org.springframework.security.web.context.SecurityContextPersistenceFilter@7f73ce28, org.springframework.security.web.header.HeaderWriterFilter@40c06358, org.springframework.security.web.authentication.logout.LogoutFilter@dd3f8aa, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3a7c678b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@611b35d6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2282400e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@623e0631, org.springframework.security.web.session.SessionManagementFilter@66e21568, org.springframework.security.web.access.ExceptionTranslationFilter@ee21292, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6c977dcf]
+2018-12-22 15:20:47.754  INFO 4384 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-12-22 15:20:48.198  INFO 4384 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 1236 (https)
+2018-12-22 15:20:48.208  INFO 4384 --- [main] sep.Application                          : Started Application in 7.217 seconds (JVM running for 8.122)
+2018-12-22 15:20:48.416  INFO 4384 --- [https-jsse-nio-1236-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-12-22 15:20:48.417  INFO 4384 --- [https-jsse-nio-1236-exec-4] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-12-22 15:20:48.442  INFO 4384 --- [https-jsse-nio-1236-exec-4] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 24 ms
+2018-12-22 15:21:00.859  INFO 4384 --- [https-jsse-nio-1236-exec-7] s.c.KoncentratorPlacanjaController       : 
+		Uspešno završeno plaćanje preko bitcoin-a.
+
+2018-12-22 15:33:55.051  INFO 4384 --- [https-jsse-nio-1236-exec-9] s.c.KoncentratorPlacanjaController       : 
+		Započeto plaćanje preko PayPal-a.
+
+2018-12-22 15:35:45.064  INFO 4384 --- [https-jsse-nio-1236-exec-9] s.c.KoncentratorPlacanjaController       : 
+		Neuspešno slanje zahteva.
+
+2018-12-22 15:39:11.481  INFO 4384 --- [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2018-12-22 15:39:11.495  INFO 4384 --- [RMI TCP Connection(2)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5bfa9431: startup date [Sat Dec 22 15:20:41 CET 2018]; root of context hierarchy
+2018-12-22 15:39:11.497  INFO 4384 --- [RMI TCP Connection(2)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-12-22 15:39:11.497  INFO 4384 --- [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-12-22 15:39:11.497  INFO 4384 --- [RMI TCP Connection(2)-127.0.0.1] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000227: Running hbm2ddl schema export
+2018-12-22 15:39:11.497  INFO 4384 --- [RMI TCP Connection(2)-127.0.0.1] org.hibernate.tool.hbm2ddl.SchemaExport  : HHH000230: Schema export complete

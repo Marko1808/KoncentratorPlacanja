@@ -5,6 +5,8 @@ import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -29,13 +31,15 @@ public class KoncentratorPlacanjaController {
 	
 	PayPalClient payPalClient = new PayPalClient();
 	
+	private static final Logger logger = LoggerFactory.getLogger(KoncentratorPlacanjaController.class);
+	
 	@CrossOrigin
 	@RequestMapping(
 			value = "/posaljiZahtev",
 			method = RequestMethod.POST
 	)
 	public ResponseEntity<?> posaljiZahtev(@RequestBody MerchantDTO merchant) {
-		System.out.println("Stao sam tu");
+		System.out.println("\n\t\tUšao u pošalji zahtev (koncentrator plaćanja).\n");
 		//ovde treba koncentrator placanja da izgenerise merchantorderId, i to sve
 		Random randomGenerator = new Random();
 		merchant.setMerchant_order_id(randomGenerator.nextInt(1000));
@@ -50,20 +54,22 @@ public class KoncentratorPlacanjaController {
 
         try {
 
-            System.out.println("Prosledjujem zahtev banci prodavca");
+            System.out.println("\n\t\tProsleđujem zahtev banci prodavca.\n");
              //step 2
             headers.setContentType(MediaType.APPLICATION_JSON);
             HttpEntity<MerchantDTO> entity = new HttpEntity<>(merchant, headers);
-            paymentUrlIdDTO = client.postForObject("http://localhost:1235/bank/proveriZahtev", entity,
+            paymentUrlIdDTO = client.postForObject("https://localhost:1235/bank/proveriZahtev", entity,
                     PaymentUrlIdDTO.class);
-            System.out.println("Vratila mi banka url: " + paymentUrlIdDTO.getUrl());
+            System.out.println("\n\t\tVratila mi banka url: " + paymentUrlIdDTO.getUrl() + "\n");
+            
+            logger.info("\n\t\tUspešno slanje zahteva.\n");
             return new ResponseEntity<>(paymentUrlIdDTO, HttpStatus.OK);
-
         } catch (Exception e) {
-            System.out.println("Ne moze da posalje");
+            System.out.println("\n\t\tNe može da pošalje zahtev (koncentrator plaćanja).\n");
+            
+            logger.info("\n\t\tNeuspešno slanje zahteva.\n");
             return null; 
         }
-		
 	}
 	
 	@CrossOrigin
@@ -72,9 +78,9 @@ public class KoncentratorPlacanjaController {
 			method = RequestMethod.POST
 	)
 	public ResponseEntity<?> payPal(@RequestBody MerchantDTO merchant) {
-		System.out.println("Dosao u PayPal");
+		System.out.println("\n\t\tDošao u PayPal.\n");
+		logger.info("\n\t\tZapočeto plaćanje preko PayPal-a.\n");
 		return payPalClient.createPayment(merchant.getAmount().toString());
-		
 	}
 	
 	@CrossOrigin
@@ -83,7 +89,8 @@ public class KoncentratorPlacanjaController {
 			method = RequestMethod.POST
 	)
 	public ResponseEntity<?> completePayment(@RequestBody String request){
-	    return payPalClient.completePayment(request);
+		logger.info("\n\t\tZavršeno plaćanje preko PayPal-a.\n");
+		return payPalClient.completePayment(request);
 	}
 	
 	
@@ -93,7 +100,7 @@ public class KoncentratorPlacanjaController {
 			method = RequestMethod.POST
 	)
 	public ResponseEntity<?> bitcoin(@RequestBody BitcoinDTO b) {
-		System.out.println("Dosao u Bitcoin...");
+		System.out.println("\n\t\tDošao u Bitcoin.\n");
 		
 		Map<String, Object> mapa = new HashMap<String,Object>();
         mapa.put("order_id",UUID.randomUUID().toString());
@@ -103,7 +110,7 @@ public class KoncentratorPlacanjaController {
         mapa.put("title",b.getNaziv());
         mapa.put("description","desc");
         mapa.put("callback_url","https://api-sandbox.coingate.com/account/orders"); //TODO:promeniti
-        mapa.put("success_url", "http://localhost:1236/responseSuccessBitcoin.html");
+        mapa.put("success_url", "https://localhost:1236/responseSuccessBitcoin.html");
         
         RestTemplate client = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
@@ -124,6 +131,8 @@ public class KoncentratorPlacanjaController {
 		r.setStatus(302);
 		r.setHeader("Location", response.getPayment_url());
         r.setHeader("Access-Control-Allow-Origin", "*");*/
+        
+        logger.info("\n\t\tUspešno završeno plaćanje preko bitcoin-a.\n");
         return new ResponseEntity<>(response.getPayment_url(), HttpStatus.OK);
 	}
 	
