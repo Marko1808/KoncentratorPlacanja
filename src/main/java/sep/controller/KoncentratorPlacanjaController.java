@@ -110,7 +110,7 @@ public class KoncentratorPlacanjaController {
         mapa.put("title",b.getNaziv());
         mapa.put("description","desc");
         mapa.put("callback_url","https://api-sandbox.coingate.com/account/orders"); //TODO:promeniti
-        mapa.put("success_url", "https://localhost:1236/responseSuccessBitcoin.html");
+        mapa.put("success_url", "https://localhost:9081/uspesno.html");
         
         RestTemplate client = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
@@ -123,14 +123,6 @@ public class KoncentratorPlacanjaController {
         HttpHeaders noviHeaders = new HttpHeaders();
         noviHeaders.add("Authorization", "Token 8W2cFE2hUx55MHxxuisH9gigTzdP7pRjYmQsHH2V");
         noviHeaders.add("Location", response.getPayment_url());
-        
-        HttpEntity<ResponseBitcoinDTO> entity1 = new HttpEntity<ResponseBitcoinDTO>(response, noviHeaders);
-        //String odg = client.postForObject(entity1.getHeaders().getLocation(), entity1, String.class); //ne moze da pogodi nas localhost...
-        
-       /* System.out.println("\n\n\t\tredirekcija: \n\n\n" + response.getPayment_url());
-		r.setStatus(302);
-		r.setHeader("Location", response.getPayment_url());
-        r.setHeader("Access-Control-Allow-Origin", "*");*/
         
         logger.info("\n\t\tUspešno završeno plaćanje preko bitcoin-a.\n");
         return new ResponseEntity<>(response.getPayment_url(), HttpStatus.OK);
